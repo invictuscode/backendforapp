@@ -9,7 +9,7 @@ async function run(filename="") {
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
     const result = await model.generateContent([prompt, {
         inlineData: {
-            data: Buffer.from(fs.readFileSync('prescription_photos/5.png')).toString("base64"),
+            data: Buffer.from(fs.readFileSync('prescription_photos/7.png')).toString("base64"),
             mimeType: 'image/png'
         }
     }]

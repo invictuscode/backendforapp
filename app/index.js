@@ -25,10 +25,12 @@ app.post("/post_prescription/:userID", async (req, res) => {
         if(!response){
          return res.status(400).json({ message: "Failed to save prescription" });
         }
-        const parsed = {...JSON.parse(response), read:true, error:null, createdAt: admin.firestore.FieldValue.serverTimestamp()}
-        await database.collection(user_id).add(parsed)
+        // const parsed = {...JSON.parse(response), read:true, error:null, createdAt: admin.firestore.FieldValue.serverTimestamp()}
+        // await database.collection(user_id).add(parsed)
+        console.log(response)
+        res.write(response)
+        res.end()
         
-        res.json(parsed);
     } catch (e){
         console.error(e);
         res.status(500).json({ message: "server error " });
