@@ -3,6 +3,8 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 const fs = require("fs");
 require('dotenv').config()
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
+const axios = require('axios');
+const { Buffer } = require('buffer');
 
 
 async function run(filename="") {
@@ -48,7 +50,7 @@ async function run(filename="") {
                 "21:00": { "number_of_tablets": 0 },
                 "22:00": { "number_of_tablets": 0 },
                 "23:00": { "number_of_tablets": 0 },
-                "12:00": { "number_of_tablets": 0 },
+                "00:00": { "number_of_tablets": 0 },
                 "01:00": { "number_of_tablets": 0 },
                 "02:00": { "number_of_tablets": 0 },
                 "03:00": { "number_of_tablets": 0 },

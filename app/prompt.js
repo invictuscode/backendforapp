@@ -25,7 +25,7 @@ module.exports = `We are developing an app to help elderly patients manage their
                 "21:00": { "number_of_tablets": 0 },
                 "22:00": { "number_of_tablets": 0 },
                 "23:00": { "number_of_tablets": 0 },
-                "12:00": { "number_of_tablets": 0 },
+                "00:00": { "number_of_tablets": 0 },
                 "01:00": { "number_of_tablets": 0 },
                 "02:00": { "number_of_tablets": 0 },
                 "03:00": { "number_of_tablets": 0 },
