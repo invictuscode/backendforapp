@@ -9,7 +9,7 @@ async function run(filename="") {
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
     const result = await model.generateContent([prompt, {
         inlineData: {
-            data: Buffer.from(fs.readFileSync('prescription_photos/7.png')).toString("base64"),
+            data: Buffer.from(fs.readFileSync('https://www.amberpharmacy.com/wp-content/uploads/2022/02/Prescription-Label.jpg')).toString("base64"),
             mimeType: 'image/png'
         }
     }]
@@ -21,17 +21,40 @@ async function run(filename="") {
         return {
             "read": false,
             "error" : err.message,
+            "patientname":"",
             "medicine": "",
             "dose": "",
             "form": "",
             "manufacturer": "",
+            "quantity":"",
+            "taken":false,
+            "dangerousorcontrolledsubstance":"",
            "frequency": {
-                "before_breakfast": { "number_of_tablets": 0 },
-                "after_breakfast": { "number_of_tablets": 0 },
-                "before_lunch": { "number_of_tablets": 0 },
-                "after_lunch": { "number_of_tablets": 0 },
-                "before_dinner": { "number_of_tablets": 0 },
-                "after_dinner": { "number_of_tablets": 0 }
+               
+                "07:00": { "number_of_tablets": 0 },
+                "08:00": { "number_of_tablets": 0 },
+                "09:00": { "number_of_tablets": 0 },
+                "10:00": { "number_of_tablets": 0 },
+                "11:00": { "number_of_tablets": 0 },
+                "12:00": { "number_of_tablets": 0 },
+                "13:00": { "number_of_tablets": 0 },
+                "14:00": { "number_of_tablets": 0 },
+                "15:00": { "number_of_tablets": 0 },
+                "16:00": { "number_of_tablets": 0 },
+                "17:00": { "number_of_tablets": 0 },
+                "18:00": { "number_of_tablets": 0 },
+                "19:00": { "number_of_tablets": 0 },
+                "20:00": { "number_of_tablets": 0 },
+                "21:00": { "number_of_tablets": 0 },
+                "22:00": { "number_of_tablets": 0 },
+                "23:00": { "number_of_tablets": 0 },
+                "12:00": { "number_of_tablets": 0 },
+                "01:00": { "number_of_tablets": 0 },
+                "02:00": { "number_of_tablets": 0 },
+                "03:00": { "number_of_tablets": 0 },
+                "04:00": { "number_of_tablets": 0 },
+                "05:00": { "number_of_tablets": 0 },
+                "06:00": { "number_of_tablets": 0 },
             },
             "special_instructions": ""
         }
