@@ -12,7 +12,10 @@
   "dependencies": {
     "@dot/env": "^0.1.5",
     "@google/generative-ai": "^0.14.1",
-    "express": "^4.19.2",
-    "firebase-admin": "^12.2.0"
+    "axios": "^1.7.8",
+    "express": "^4.21.1",
+    "firebase-admin": "^12.2.0",
+    "request": "^2.88.2",
+    "uuid": "^11.0.3"
   }
 }
