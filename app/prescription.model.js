@@ -1,3 +1,4 @@
+
 const prompt = require("./prompt");
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 const fs = require("fs");
@@ -25,7 +26,7 @@ async function run(filename = "") {
     try {
         // Download the image
         await download(
-            'https://firebasestorage.googleapis.com/v0/b/prescriptionmed.appspot.com/o/Screen%20Shot%202024-11-26%20at%204.49.40%20PM.png?alt=media&token=70da8316-1949-461e-9890-d38d53c3e67b',
+            'https://hpr.com/wp-content/uploads/2023/11/PH_RX_RXlabel_3a.jpg',
             filePath
         );
 
@@ -61,19 +62,42 @@ async function run(filename = "") {
 
 function defaultErrorResponse(errorMessage) {
     return {
-        "read": false,
-        "error": errorMessage,
-        "patientname": "",
+        "patientname":"",
         "medicine": "",
         "dose": "",
         "form": "",
         "manufacturer": "",
-        "quantity": "",
-        "taken": false,
-        "dangerousorcontrolledsubstance": "",
-        "frequency": initializeFrequency(),
+        "quantity":"",
+        "taken":false,
+        "dangerousorcontrolledsubstance":"yes or no",
+         "frequency": {
+            "07:00": { "number_of_tablets": 0 },
+            "08:00": { "number_of_tablets": 0 },
+            "09:00": { "number_of_tablets": 0 },
+            "10:00": { "number_of_tablets": 0 },
+            "11:00": { "number_of_tablets": 0 },
+            "12:00": { "number_of_tablets": 0 },
+            "13:00": { "number_of_tablets": 0 },
+            "14:00": { "number_of_tablets": 0 },
+            "15:00": { "number_of_tablets": 0 },
+            "16:00": { "number_of_tablets": 0 },
+            "17:00": { "number_of_tablets": 0 },
+            "18:00": { "number_of_tablets": 0 },
+            "19:00": { "number_of_tablets": 0 },
+            "20:00": { "number_of_tablets": 0 },
+            "21:00": { "number_of_tablets": 0 },
+            "22:00": { "number_of_tablets": 0 },
+            "23:00": { "number_of_tablets": 0 },
+            "00:00": { "number_of_tablets": 0 },
+            "01:00": { "number_of_tablets": 0 },
+            "02:00": { "number_of_tablets": 0 },
+            "03:00": { "number_of_tablets": 0 },
+            "04:00": { "number_of_tablets": 0 },
+            "05:00": { "number_of_tablets": 0 },
+            "06:00": { "number_of_tablets": 0 },
+        },
         "special_instructions": ""
-    };
+};
 }
 
 
