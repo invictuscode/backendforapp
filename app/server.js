@@ -60,6 +60,7 @@ app.post('/generate', async (req, res) => {
         }
 
         // Return the generated content to the frontend
+        console.log("response: ", responseText)
         res.json({ response: responseText });
 
     } catch (error) {
