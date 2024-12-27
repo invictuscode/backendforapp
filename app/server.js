@@ -30,7 +30,7 @@ app.post('/generate', async (req, res) => {
     try {
         // Decode and save the image
         const imageBuffer = Buffer.from(imageBase64, 'base64');
-        fs.writeFileSync(filePath, imageBuffer);
+        
 
         // Check if the prompt is valid
         if (!prompt) {
@@ -60,6 +60,7 @@ app.post('/generate', async (req, res) => {
         }
 
         // Return the generated content to the frontend
+        console.log("response: ", responseText)
         res.json({ response: responseText });
 
     } catch (error) {
