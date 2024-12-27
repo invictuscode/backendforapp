@@ -1,4 +1,4 @@
-const {photoPrompt, TextPrompt} = require("./prompt");
+const { photoPrompt, TextPrompt } = require("./prompt");
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 require('dotenv').config();
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
@@ -35,6 +35,11 @@ const gracefulShutdown = () => {
     }, 5000);
 };
 
+// Default route for health check
+app.get('/', (req, res) => {
+    res.send("app is running");
+});
+
 // Route to generate content using AI
 app.post('/generate/image', async (req, res) => {
     const { imageBase64 } = req.body; // Receiving base64 image
@@ -45,7 +50,7 @@ app.post('/generate/image', async (req, res) => {
         return res.status(400).json({ error: "No image data provided." });
     }
 
-    try {  
+    try {
         // Check if the prompt is valid
         if (!photoPrompt) {
             log("Prompt is missing.");
@@ -57,7 +62,7 @@ app.post('/generate/image', async (req, res) => {
 
         // Generate content using the prompt and image data
         const result = await model.generateContent([
-            photoPrompt, 
+            photoPrompt,
             {
                 inlineData: {
                     data: imageBase64,
@@ -83,11 +88,11 @@ app.post('/generate/image', async (req, res) => {
     }
 });
 
-//Route to generate content with Text Input
+// Route to generate content with Text Input
 app.post('/generate/textinput', async (req, res) => {
     const { medicine, dose_in_mg, form, quantity, treatment_start_date, treatment_end_date, prescription_refills, frequency, special_instructions } = req.body;
 
-    console.log(req.body)
+    console.log(req.body);
     if (!medicine && !dose_in_mg && !form && !quantity && !treatment_start_date && !treatment_end_date && !prescription_refills && !frequency && !special_instructions) {
         log("No text data provided.");
         return res.status(400).json({ error: "No text data provided." });
@@ -100,7 +105,7 @@ app.post('/generate/textinput', async (req, res) => {
         }
 
         const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-        
+
         // Convert JSON to base64 string
         const jsonString = JSON.stringify(req.body);
         const base64Data = Buffer.from(jsonString).toString('base64');
@@ -129,6 +134,12 @@ app.post('/generate/textinput', async (req, res) => {
         log("Error processing content generation", error.message);
         res.status(500).json({ error: "Error processing the request." });
     }
+});
+
+// Handle unknown routes
+app.use((req, res) => {
+    log("Unknown route accessed.");
+    res.status(404).send("404: Resource not found");
 });
 
 // Start the server
