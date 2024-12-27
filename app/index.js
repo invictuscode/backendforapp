@@ -137,7 +137,11 @@ app.post('/generate/textinput', async (req, res) => {
 });
 
 // Handle unknown routes
-app.use((req, res) => {
+app.get('/*',(req, res) => {
+    log("Unknown route accessed.");
+    res.status(404).send("404: Resource not found");
+});
+app.post('/*',(req, res) => {
     log("Unknown route accessed.");
     res.status(404).send("404: Resource not found");
 });
