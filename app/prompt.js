@@ -10,7 +10,7 @@ const photoPrompt = `We are developing an app to help elderly patients manage th
             "treatment_start_date": "",
             "treatment_end_date": "",
             "prescription_refills": "",
-            "side_effects": "write the side effects of the medication, we dont want the patient to die. dont use the label for this, find it yourself. write it in html",
+            "side_effects": "write the side effects of the medication, we dont want the patient to die. dont use the label for this, find it yourself. write it in html (write this in Gujarati)",
             "frequency": [
             {"time": "07:00", "number_of_tablets": 0},
             {"time": "08:00", "number_of_tablets": 0},
