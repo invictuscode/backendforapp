@@ -43,8 +43,8 @@ const photoPrompt = `We are developing an app to help elderly patients manage th
 const TextPrompt = `We are developing an app to help elderly patients manage their medications. They are manually entering the data, but they don't have data such as side effects, what the drug does, or whether it is a dangerous or controlled substance. Here is the data we are sending you: medicine, dose in mg, form, quantity, treatment start date, treatment end date, prescription refills, and frequency. Please fill in the remaining details. The patient might die if they don't know the uses of the medicine, side effects, or if it is a dangerous or controlled substance. Don't change the data I have provided, only change the data I am asking you to change. Please provide the information in the format requested. Please make me a JSON object.
 
 {
-            "medicine": "",
-            "uses_of_the_medicine": "give us the actual use, the patient might die if they dont know. dont use the label for this, find it yourself",
+            "medicine": "(write the name of the medication in Gujarati)",
+            "uses_of_the_medicine": "give us the actual use, the patient might die if they dont know. dont use the label for this, find it yourself (write this in Gujarati)",
             "dose_in_mg": "",
             "form": "",
             "manufacturer": "",
@@ -53,7 +53,7 @@ const TextPrompt = `We are developing an app to help elderly patients manage the
             "treatment_start_date": "",
             "treatment_end_date": "",
             "prescription_refills": "",
-            "side_effects": "write the side effects of the medication, we dont want the patient to die. dont use the label for this, find it yourself. write it in html",
+            "side_effects": "write the side effects of the medication, we dont want the patient to die. dont use the label for this, find it yourself. write it in html (write this in Gujarati)",
             "frequency": [
             {"time": "07:00", "number_of_tablets": 0},
             {"time": "08:00", "number_of_tablets": 0},

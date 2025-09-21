@@ -88,6 +88,8 @@ app.post('/generate/image', async (req, res) => {
     }
 });
 
+
+
 // Route to generate content with Text Input
 app.post('/generate/textinput', async (req, res) => {
     const { medicine, dose_in_mg, form, quantity, treatment_start_date, treatment_end_date, prescription_refills, frequency, special_instructions } = req.body;
