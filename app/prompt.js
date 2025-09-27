@@ -3,7 +3,7 @@ const photoPrompt = `We are developing an app to help elderly patients manage th
             "medicine": "",
             "uses_of_the_medicine": "give us the actual use, the patient might die if they dont know. dont use the label for this, find it yourself",
             "dose_in_mg": "",
-            "form": "",
+            "form": "options: injection, capsule, tablet, syrup, solution, liquid, powder, lotion, inhaler",
             "manufacturer": "",
             "quantity":"",
             "dangerous_or_controlled_substance":"yes/no",
