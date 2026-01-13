@@ -58,7 +58,7 @@ app.post('/generate/image', async (req, res) => {
         }
 
         // Initialize the model for generative AI
-        const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
+        const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash-lite" });
 
         // Generate content using the prompt and image data
         const result = await model.generateContent([
@@ -104,7 +104,7 @@ app.post('/generate/textinput', async (req, res) => {
             return res.status(400).json({ error: "Prompt is not available." });
         }
 
-        const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
+        const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash-lite" });
 
         // Convert JSON to base64 string
         const jsonString = JSON.stringify(req.body);
