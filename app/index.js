@@ -58,7 +58,7 @@ app.post('/generate/image', async (req, res) => {
         }
 
         // Initialize the model for generative AI
-        const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+        const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
         // Generate content using the prompt and image data
         const result = await model.generateContent([
