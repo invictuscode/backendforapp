@@ -104,7 +104,7 @@ app.post('/generate/textinput', async (req, res) => {
             return res.status(400).json({ error: "Prompt is not available." });
         }
 
-        const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+        const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
         // Convert JSON to base64 string
         const jsonString = JSON.stringify(req.body);
