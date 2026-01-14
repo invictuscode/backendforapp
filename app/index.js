@@ -115,7 +115,7 @@ app.post('/generate/textinput', async (req, res) => {
             TextPrompt,
             {
                 inlineData: {
-                    mimeType: 'application/json',
+                    mimeType: 'text/plain',
                     data: base64Data
                 }
             }
